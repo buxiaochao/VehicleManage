@@ -1,0 +1,625 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewConfig>
+  <Arguments/>
+  <Context/>
+  <Model>
+    <DataType name="dtInfo">
+      <PropertyDef name="info"/>
+    </DataType>
+    <DataType name="dtCar">
+      <PropertyDef name="car"/>
+    </DataType>
+  </Model>
+  <View>
+    <ToolBar>
+      <Property name="style">
+        <Property name="background-color">#f8f8f8</Property>
+        <Property name="border-bottom">1px solid #bbbbbb</Property>
+      </Property>
+      <Property name="ignored">true</Property>
+      <ToolBarLabel>
+        <Property name="text">客车管理系统</Property>
+      </ToolBarLabel>
+    </ToolBar>
+    <HtmlContainer>
+      <Property name="content">&lt;div class = &quot;title&quot;>&#xD;
+	&lt;div class = &quot;logo&quot;>&lt;/div>&#xD;
+	&lt;span style=&quot;height:42px;font-family:'微软雅黑';font-size:13px;margin-top:9px;float:left;&quot;>客运车管理系统&lt;/span>&#xD;
+	&lt;div class = &quot;lr&quot; style =&quot;float:right;margin-right:100px;&quot;>&amp;nbsp;&#xD;
+	   &lt;div style=&quot;margin-left:22px;height:100%;margin-top:-10px;&quot;>&#xD;
+	      &lt;a href=&quot;#&quot;>注册 &lt;/a>&#xD;
+	      &lt;span style= &quot;width:6px;height:26px;font-size:16px;&quot;>|&lt;/span>&#xD;
+	      &lt;a href = &quot;#&quot;>登录&lt;/a>&#xD;
+	   &lt;/div>&#xD;
+	&lt;/div>&#xD;
+&lt;/div></Property>
+    </HtmlContainer>
+    <SplitPanel>
+      <Property name="position">150</Property>
+      <Property name="collapseable">false</Property>
+      <Property name="resizeable">false</Property>
+      <MainControl>
+        <Container>
+          <TabControl>
+            <Property name="style">
+              <Property name="background-color">#f0f0f2</Property>
+            </Property>
+            <ControlTab>
+              <Property name="caption">测试</Property>
+              <Property name="visible">true</Property>
+              <Property name="closeable">true</Property>
+              <Property name="height">20</Property>
+              <SplitPanel>
+                <Property name="position">274</Property>
+                <Property name="resizeable">false</Property>
+                <MainControl>
+                  <Container>
+                    <Property name="contentOverflowX">auto</Property>
+                    <ToolBar>
+                      <Property name="style">
+                        <Property name="background-color">#fff</Property>
+                      </Property>
+                      <ToolBarButton>
+                        <ClientEvent name="onReady">$(&quot;.download&quot;).css(&quot;width&quot;,&quot;27px&quot;);&#xD;
+</ClientEvent>
+                        <Property name="caption">导出/打印</Property>
+                        <Property name="icon">url(>images/download.png)</Property>
+                        <Property name="style">
+                          <Property name="font-size">13px</Property>
+                        </Property>
+                        <Property name="iconClass">download</Property>
+                      </ToolBarButton>
+                      <ToolBarLabel>
+                        <Property name="text">出租车信息管理</Property>
+                        <Property name="style">
+                          <Property name="margin-left">300px</Property>
+                          <Property name="font-size">15px</Property>
+                        </Property>
+                      </ToolBarLabel>
+                    </ToolBar>
+                    <Container>
+                      <Property name="style">
+                        <Property name="padding-left">12px</Property>
+                      </Property>
+                      <AutoForm>
+                        <Property name="cols">106,*,*,*</Property>
+                        <Property name="labelSeparator">：</Property>
+                        <Image id="carImg" layoutConstraint="rowSpan:2">
+                          <ClientEvent name="onReady">self.set(&quot;image&quot;,&quot;>images/car.gif&quot;);</ClientEvent>
+                          <Property name="style">
+                            <Property name="height">59px</Property>
+                            <Property name="width">76px</Property>
+                          </Property>
+                        </Image>
+                        <AutoFormElement>
+                          <Property name="label">车牌</Property>
+                          <Editor>
+                            <Label>
+                              <Property name="text">贵HU0368</Property>
+                            </Label>
+                          </Editor>
+                        </AutoFormElement>
+                        <AutoFormElement>
+                          <Property name="label">里程数</Property>
+                          <Editor>
+                            <Label>
+                              <Property name="text">10万公里</Property>
+                            </Label>
+                          </Editor>
+                        </AutoFormElement>
+                        <Button layoutConstraint="rowSpan:2">
+                          <ClientEvent name="onClick">dorado.MessageBox.alert(&quot;${request.getContextPath()}&quot;);&#xD;
+</ClientEvent>
+                          <Property name="caption">注销</Property>
+                          <Property name="width">120</Property>
+                        </Button>
+                        <AutoFormElement>
+                          <Property name="label">公司</Property>
+                          <Editor>
+                            <Label>
+                              <Property name="text">某某某出租车公司</Property>
+                            </Label>
+                          </Editor>
+                        </AutoFormElement>
+                        <AutoFormElement>
+                          <Property name="label">厂型牌号</Property>
+                          <Editor>
+                            <Label>
+                              <Property name="text">夏利7100UA</Property>
+                            </Label>
+                          </Editor>
+                        </AutoFormElement>
+                      </AutoForm>
+                      <DataGrid>
+                        <Property name="dataSet">dsInfo</Property>
+                        <Property name="height">100</Property>
+                        <DataColumn>
+                          <Property name="caption">信息</Property>
+                          <Property name="property">info</Property>
+                          <Property name="name">info</Property>
+                          <Property name="editable">false</Property>
+                          <Editor/>
+                        </DataColumn>
+                      </DataGrid>
+                      <AutoForm>
+                        <Property name="cols">*,*,*</Property>
+                        <Property name="style">
+                          <Property name="background-color">#e0e0e0</Property>
+                          <Property name="margin-top">11px</Property>
+                        </Property>
+                        <AutoFormElement>
+                          <Property name="label">车主信息</Property>
+                          <Property name="style">
+                            <Property name="font-size">13px</Property>
+                          </Property>
+                          <Editor>
+                            <Label/>
+                          </Editor>
+                        </AutoFormElement>
+                        <Label>
+                          <Property name="text">上次编辑：2006-4-12 09:56</Property>
+                        </Label>
+                        <AutoFormElement>
+                          <Editor>
+                            <Button>
+                              <ClientEvent name="onClick">view.get(&quot;#editDialog&quot;).show();&#xD;
+</ClientEvent>
+                              <Property name="caption">编辑</Property>
+                              <Property name="width">67</Property>
+                            </Button>
+                          </Editor>
+                        </AutoFormElement>
+                        <AutoFormElement>
+                          <Property name="label">姓名</Property>
+                          <Property name="labelSeparator">：</Property>
+                          <Editor>
+                            <Label>
+                              <Property name="text">张大牛</Property>
+                            </Label>
+                          </Editor>
+                        </AutoFormElement>
+                        <AutoFormElement>
+                          <Property name="label">性别</Property>
+                          <Property name="labelSeparator">：</Property>
+                          <Editor>
+                            <Label>
+                              <Property name="text">男</Property>
+                            </Label>
+                          </Editor>
+                        </AutoFormElement>
+                        <AutoFormElement>
+                          <Property name="label">身份证</Property>
+                          <Property name="labelSeparator">：</Property>
+                          <Editor>
+                            <Label>
+                              <Property name="text">533456199801260987</Property>
+                            </Label>
+                          </Editor>
+                        </AutoFormElement>
+                        <AutoFormElement>
+                          <Property name="label">联系电话</Property>
+                          <Property name="labelSeparator">：</Property>
+                          <Editor>
+                            <Label>
+                              <Property name="text">18217430087</Property>
+                            </Label>
+                          </Editor>
+                        </AutoFormElement>
+                        <AutoFormElement>
+                          <Property name="label">出生年月</Property>
+                          <Property name="labelSeparator">：</Property>
+                          <Editor>
+                            <Label>
+                              <Property name="text">1989-07-13</Property>
+                            </Label>
+                          </Editor>
+                        </AutoFormElement>
+                        <AutoFormElement>
+                          <Property name="label">地址</Property>
+                          <Property name="labelSeparator">：</Property>
+                          <Editor>
+                            <Label>
+                              <Property name="text">贵州省施秉县双井镇把琴村天上组</Property>
+                            </Label>
+                          </Editor>
+                        </AutoFormElement>
+                      </AutoForm>
+                      <AutoForm>
+                        <Property name="cols">*,*,*</Property>
+                        <Property name="labelWidth">130</Property>
+                        <Property name="style">
+                          <Property name="background-color">#e0e0e0</Property>
+                          <Property name="margin-top">6px</Property>
+                        </Property>
+                        <AutoFormElement layoutConstraint="colSpan:3">
+                          <Property name="label">车辆信息</Property>
+                          <Property name="style">
+                            <Property name="font-size">13px</Property>
+                          </Property>
+                          <Editor>
+                            <Label/>
+                          </Editor>
+                        </AutoFormElement>
+                        <AutoFormElement>
+                          <Property name="label">专段车辆牌照号</Property>
+                          <Property name="labelSeparator">：</Property>
+                          <Editor>
+                            <Label/>
+                          </Editor>
+                        </AutoFormElement>
+                        <AutoFormElement>
+                          <Property name="label">厂牌型号</Property>
+                          <Property name="labelSeparator">：</Property>
+                          <Editor>
+                            <Label/>
+                          </Editor>
+                        </AutoFormElement>
+                        <AutoFormElement>
+                          <Property name="label">车辆识别码</Property>
+                          <Property name="labelSeparator">：</Property>
+                          <Editor>
+                            <Label/>
+                          </Editor>
+                        </AutoFormElement>
+                        <AutoFormElement>
+                          <Property name="label">经营者</Property>
+                          <Property name="labelSeparator">：</Property>
+                          <Editor>
+                            <Label/>
+                          </Editor>
+                        </AutoFormElement>
+                        <AutoFormElement>
+                          <Property name="label">经营权证书编号</Property>
+                          <Property name="labelSeparator">：</Property>
+                          <Editor>
+                            <Label/>
+                          </Editor>
+                        </AutoFormElement>
+                        <AutoFormElement>
+                          <Property name="label">经营期限</Property>
+                          <Property name="labelSeparator">：</Property>
+                          <Editor>
+                            <Label/>
+                          </Editor>
+                        </AutoFormElement>
+                        <AutoFormElement>
+                          <Property name="label">前经营者</Property>
+                          <Property name="labelSeparator">：</Property>
+                          <Editor>
+                            <Label/>
+                          </Editor>
+                        </AutoFormElement>
+                        <AutoFormElement>
+                          <Property name="label">转让时间</Property>
+                          <Property name="labelSeparator">：</Property>
+                          <Editor>
+                            <Label/>
+                          </Editor>
+                        </AutoFormElement>
+                        <AutoFormElement>
+                          <Property name="label">经营权取得方式</Property>
+                          <Property name="labelSeparator">：</Property>
+                          <Editor>
+                            <Label/>
+                          </Editor>
+                        </AutoFormElement>
+                        <AutoFormElement>
+                          <Property name="label">整体经营权</Property>
+                          <Property name="labelSeparator">：</Property>
+                          <Editor>
+                            <Label/>
+                          </Editor>
+                        </AutoFormElement>
+                        <AutoFormElement>
+                          <Property name="labelSeparator">：</Property>
+                          <Property name="label">营权质押</Property>
+                          <Editor>
+                            <Label/>
+                          </Editor>
+                        </AutoFormElement>
+                        <AutoFormElement>
+                          <Property name="label">道路运输证号</Property>
+                          <Property name="labelSeparator">：</Property>
+                          <Editor>
+                            <Label/>
+                          </Editor>
+                        </AutoFormElement>
+                        <AutoFormElement>
+                          <Property name="label">计价器编号</Property>
+                          <Editor>
+                            <Label/>
+                          </Editor>
+                        </AutoFormElement>
+                        <AutoFormElement>
+                          <Property name="label">计价器型号</Property>
+                          <Property name="labelSeparator">：</Property>
+                          <Editor>
+                            <Label/>
+                          </Editor>
+                        </AutoFormElement>
+                        <AutoFormElement>
+                          <Property name="labelSeparator">：</Property>
+                          <Property name="label">GPS</Property>
+                          <Editor>
+                            <Label/>
+                          </Editor>
+                        </AutoFormElement>
+                        <AutoFormElement>
+                          <Property name="label">车辆长宽高</Property>
+                          <Property name="labelSeparator">：</Property>
+                          <Editor>
+                            <Label/>
+                          </Editor>
+                        </AutoFormElement>
+                      </AutoForm>
+                      <AutoForm>
+                        <Property name="cols">*,*,*</Property>
+                        <Property name="labelWidth">130</Property>
+                        <Property name="style">
+                          <Property name="background-color">#e0e0e0</Property>
+                          <Property name="margin-top">6px</Property>
+                        </Property>
+                        <AutoFormElement layoutConstraint="colSpan:3">
+                          <Property name="label">其他</Property>
+                          <Property name="style">
+                            <Property name="font-size">13px</Property>
+                          </Property>
+                          <Editor>
+                            <Label/>
+                          </Editor>
+                        </AutoFormElement>
+                        <AutoFormElement>
+                          <Property name="label">保险</Property>
+                          <Property name="labelSeparator">：</Property>
+                          <Editor>
+                            <Label>
+                              <Property name="text">平安保险</Property>
+                            </Label>
+                          </Editor>
+                        </AutoFormElement>
+                        <AutoFormElement>
+                          <Property name="label">二级维护</Property>
+                          <Property name="labelSeparator">：</Property>
+                          <Editor>
+                            <Label>
+                              <Property name="text">2014-06-16</Property>
+                            </Label>
+                          </Editor>
+                        </AutoFormElement>
+                        <AutoFormElement>
+                          <Property name="label">年审</Property>
+                          <Property name="labelSeparator">：</Property>
+                          <Editor>
+                            <Label>
+                              <Property name="text">已年审</Property>
+                            </Label>
+                          </Editor>
+                        </AutoFormElement>
+                        <AutoFormElement>
+                          <Property name="label">保险号</Property>
+                          <Property name="labelSeparator">：</Property>
+                          <Editor>
+                            <Label>
+                              <Property name="text">4566324</Property>
+                            </Label>
+                          </Editor>
+                        </AutoFormElement>
+                        <AutoFormElement>
+                          <Property name="label">下次维护时间</Property>
+                          <Property name="labelSeparator">：</Property>
+                          <Editor>
+                            <Label>
+                              <Property name="text">2014-09-16</Property>
+                            </Label>
+                          </Editor>
+                        </AutoFormElement>
+                        <AutoFormElement>
+                          <Property name="label">下次年审时间</Property>
+                          <Property name="labelSeparator">：</Property>
+                          <Editor>
+                            <Label>
+                              <Property name="text">2015-09-13</Property>
+                            </Label>
+                          </Editor>
+                        </AutoFormElement>
+                      </AutoForm>
+                      <ToolBar/>
+                    </Container>
+                  </Container>
+                </MainControl>
+                <SideControl>
+                  <Container>
+                    <Property name="style">
+                      <Property name="background-color">#bfbfbf</Property>
+                    </Property>
+                    <ToolBar>
+                      <Property name="style">
+                        <Property name="background-color">#fff</Property>
+                        <Property name="margin-top">3px</Property>
+                      </Property>
+                      <Property name="ignored">true</Property>
+                      <TextEditor>
+                        <Property name="text">搜索身份证/车牌号/驾驶证</Property>
+                        <Property name="style">
+                          <Property name="float">left</Property>
+                        </Property>
+                      </TextEditor>
+                      <ToolBarButton>
+                        <Property name="icon">url(>skin>common/icons.gif) -120px -0px</Property>
+                      </ToolBarButton>
+                    </ToolBar>
+                    <HtmlContainer>
+                      <ClientEvent name="onReady">$(&quot;#showCar&quot;).on('click',function(){&#xD;
+	&#xD;
+	var path = &quot;${request.getContextPath()}&quot;;&#xD;
+	if($(&quot;#flag&quot;) &amp;&amp; $(&quot;#flag&quot;)[0].value == 1){&#xD;
+		path = path+&quot;/images/d_up.png&quot;;&#xD;
+		$(&quot;.d_down&quot;).css(&quot;backgroundImage&quot;,&quot;url(&quot;+path+&quot;)&quot;); &#xD;
+		$(&quot;#flag&quot;)[0].value = 2;&#xD;
+		view.get(&quot;#carTable&quot;).set(&quot;visible&quot;,false);&#xD;
+	}else {&#xD;
+		path = path+&quot;/images/d_down.png&quot;;&#xD;
+		$(&quot;.d_down&quot;).css(&quot;backgroundImage&quot;,&quot;url(&quot;+path+&quot;)&quot;); &#xD;
+		$(&quot;#flag&quot;)[0].value = 1;&#xD;
+		view.get(&quot;#carTable&quot;).set(&quot;visible&quot;,true);&#xD;
+	}&#xD;
+	&#xD;
+});&#xD;
+&#xD;
+$(&quot;#add&quot;).on('click',function(){&#xD;
+	&#xD;
+	view.get(&quot;#addDialog&quot;).show();&#xD;
+});&#xD;
+</ClientEvent>
+                      <Property name="content">&lt;div style=&quot;width:274px;height:72px;background-color:#bfbfbf;padding-top:6px;&quot;>&#xD;
+  &#xD;
+  &lt;div class = &quot;search&quot; style=&quot;float:left;margin-left:3px;width:232px;height:40px;&quot; type=&quot;text&quot; id = &quot;searchId&quot; name = &quot;search&quot;>&#xD;
+  &lt;/div>&#xD;
+  &lt;div class = &quot;add&quot; id = &quot;add&quot; style=&quot;float:left;width:32px;height:35px;&quot;>&lt;/div>&#xD;
+  &lt;div style=&quot;float:left;margin-left:6px;width:263px;height:25px;margin-top:5px;text-align:center;&quot;>&#xD;
+   &lt;div id = &quot;showCar&quot; style =&quot;cursor:pointer;&quot;>&#xD;
+	    &lt;span style=&quot;font-size:13px;float:left;margin-left:84px;&quot;>展开全部&lt;/span>&#xD;
+	    &lt;div class = &quot;d_down&quot; style = &quot;float:left;margin-left:3px;width:20px;height:16px;&quot;>&lt;/div>&#xD;
+	    &lt;input id = &quot;flag&quot; type = &quot;text&quot; name=&quot;flag&quot; value=&quot;1&quot; style = &quot;display:none;&quot; />&#xD;
+   &lt;/div>&#xD;
+  &lt;/div>&#xD;
+&lt;/div></Property>
+                    </HtmlContainer>
+                    <DataGrid id="carTable">
+                      <Property name="dataSet">dsTree</Property>
+                      <Property name="dynaRowHeight">true</Property>
+                      <Property name="showHeader">false</Property>
+                      <Property name="highlightSelectedRow">false</Property>
+                      <Property name="highlightHoverRow">false</Property>
+                      <Property name="highlightCurrentRow">false</Property>
+                      <Property name="rowHeight">62</Property>
+                      <Property name="readOnly">true</Property>
+                      <DataColumn id="imageCar">
+                        <Property name="editable">false</Property>
+                        <Property name="readOnly">true</Property>
+                        <Editor>
+                          <Image>
+                            <ClientEvent name="onReady">self.set(&quot;image&quot;,&quot;>images/carItem.png&quot;);</ClientEvent>
+                            <Property name="style">
+                              <Property name="width">54px</Property>
+                              <Property name="height">53px</Property>
+                            </Property>
+                          </Image>
+                        </Editor>
+                      </DataColumn>
+                      <DataColumn>
+                        <Property name="property">car</Property>
+                        <Property name="name">car</Property>
+                        <Property name="align">left</Property>
+                        <Property name="editable">false</Property>
+                        <Editor/>
+                      </DataColumn>
+                    </DataGrid>
+                    <FieldSet>
+                      <Property name="caption">展开全部</Property>
+                      <Property name="visible">true</Property>
+                      <Property name="ignored">true</Property>
+                      <Buttons/>
+                      <Children/>
+                    </FieldSet>
+                  </Container>
+                </SideControl>
+              </SplitPanel>
+            </ControlTab>
+            <ControlTab>
+              <Property name="caption">测试2</Property>
+            </ControlTab>
+            <IFrameTab>
+              <Property name="path">http://www.baidu.com</Property>
+              <Property name="caption">百度</Property>
+            </IFrameTab>
+          </TabControl>
+        </Container>
+      </MainControl>
+      <SideControl>
+        <HtmlContainer>
+          <ClientEvent name="onReady">$(&quot;#carInfo&quot;).on('click',function(){&#xD;
+	&#xD;
+	alert(&quot;carInfo&quot;);&#xD;
+});&#xD;
+$(&quot;#busInfo&quot;).on('click',function(){&#xD;
+	&#xD;
+	alert(&quot;busInfo&quot;);&#xD;
+});&#xD;
+$(&quot;#companyInfo&quot;).on('click',function(){&#xD;
+	&#xD;
+	alert(&quot;companyInfo&quot;);&#xD;
+});&#xD;
+$(&quot;#employeesInfo&quot;).on('click',function(){&#xD;
+	&#xD;
+	alert(&quot;employeesInfo&quot;);&#xD;
+});&#xD;
+</ClientEvent>
+          <Property name="width">125</Property>
+          <Property name="style">
+            <Property name="background-color">rgb(171, 171, 171)</Property>
+          </Property>
+          <Property name="content">  &lt;div class = &quot;menu&quot;>&#xD;
+	&lt;div style=&quot;height:15px;&quot;>&lt;/div>&#xD;
+	&lt;span style=&quot;display:block;margin-left:6px;color:rgb(222, 222, 222);&quot;>信息管理&lt;/span>&#xD;
+	&lt;div style=&quot; clear:both;height:10px;&quot;>&lt;/div>&#xD;
+	&lt;div class =&quot;items&quot;>&#xD;
+	   &lt;div style = &quot;width:50px;height:50px;float:left;padding-left:5px;&quot; id=&quot;carInfo&quot;>&lt;div class = &quot;car&quot;>&lt;/div>&lt;span style=&quot;margin-left:2px;&quot;>出租车&lt;/span>&lt;/div>&#xD;
+		&lt;div style = &quot;width:50px;height:50px;float:left;&quot; id=&quot;busInfo&quot;>&lt;div class = &quot;bus&quot;>&lt;/div>&lt;span style=&quot;margin-left:3px;&quot;>公交车&lt;/span>&lt;/div>&#xD;
+		&lt;div style = &quot;width:50px;height:50px;float:left;margin-top:10px;&quot; id=&quot;companyInfo&quot;>&lt;div class = &quot;company&quot;>&lt;/div>&lt;span style=&quot;margin-left:10px;&quot;>企    业&lt;/span>&lt;/div>&#xD;
+		&lt;div style = &quot;width:55px;height:50px;float:left;margin-top:10px;&quot; id=&quot;employeesInfo&quot;>&lt;div class = &quot;employees&quot;>&lt;/div>&lt;span style=&quot;margin-left:3px;&quot;>从业人员&lt;/span>&lt;/div>&#xD;
+	&lt;/div>&#xD;
+	&lt;div style=&quot; clear:both;height:25px;&quot;>&lt;/div>&#xD;
+	&lt;span style=&quot;clear:both;display:block;margin-left:6px;color:rgb(222, 222, 222);&quot;>考核管理&lt;/span>&#xD;
+	&lt;div style=&quot; clear:both;height:10px;&quot;>&lt;/div>&#xD;
+	&lt;div class =&quot;items&quot;>&#xD;
+	   &lt;div style = &quot;width:50px;height:50px;float:left;padding-left:5px;&quot;>&lt;div class = &quot;car&quot;>&lt;/div>&lt;span style=&quot;margin-left:2px;&quot;>出租车&lt;/span>&lt;/div>&#xD;
+	&lt;div style = &quot;width:50px;height:50px;float:left;&quot;>&lt;div class = &quot;bus&quot;>&lt;/div>&lt;span style=&quot;margin-left:3px;&quot;>公交车&lt;/span>&lt;/div>&#xD;
+	&lt;div style = &quot;width:50px;height:50px;float:left;margin-top:10px;&quot;>&lt;div class = &quot;company&quot;>&lt;/div>&lt;span style=&quot;margin-left:10px;&quot;>企    业&lt;/span>&lt;/div>&#xD;
+	&lt;div style = &quot;width:55px;height:50px;float:left;margin-top:10px;&quot;>&lt;div class = &quot;employees&quot;>&lt;/div>&lt;span style=&quot;margin-left:3px;&quot;>从业人员&lt;/span>&lt;/div>&#xD;
+	&lt;/div>   &#xD;
+	&lt;div style=&quot; clear:both;height:25px;&quot;>&lt;/div>&#xD;
+	&lt;span style=&quot;clear:both;display:block;margin-left:6px;color:rgb(222, 222, 222);&quot;>信誉管理&lt;/span>&#xD;
+	&lt;div style=&quot; clear:both;height:10px;&quot;>&lt;/div>&#xD;
+	&lt;div class =&quot;items&quot;>&#xD;
+	   &lt;div style = &quot;width:50px;height:50px;float:left;padding-left:5px;&quot;>&lt;div class = &quot;maintain&quot;>&lt;/div>&lt;span style=&quot;margin-left:-5px;&quot;>二级维护&lt;/span>&lt;/div>&#xD;
+	&lt;div style = &quot;width:50px;height:50px;float:left;&quot;>&lt;div class = &quot;black&quot;>&lt;/div>&lt;span style=&quot;margin-left:3px;&quot;>黑名单&lt;/span>&lt;/div>&#xD;
+	&lt;div style = &quot;width:50px;height:50px;float:left;margin-top:10px;&quot;>&lt;div class = &quot;cama&quot;>&lt;/div>&lt;span style=&quot;margin-left:0px;&quot;>违法违章&lt;/span>&lt;/div>&#xD;
+	&lt;/div>    &#xD;
+	&lt;div style=&quot; clear:both;height:25px;&quot;>&lt;/div>&#xD;
+	&lt;span style=&quot;clear:both;display:block;margin-left:6px;color:rgb(222, 222, 222);&quot;>下载/导出&lt;/span>&#xD;
+	&lt;div style=&quot; clear:both;height:10px;&quot;>&lt;/div>&#xD;
+	&lt;div class =&quot;items&quot;>&#xD;
+	   &lt;div style = &quot;width:50px;height:50px;float:left;padding-left:5px;&quot;>&lt;div class = &quot;all&quot;>&lt;/div>&lt;span style=&quot;margin-left:6px;&quot;>汇 总&lt;/span>&lt;/div>&#xD;
+  	   &lt;/div>&#xD;
+	&lt;/div>&#xD;
+</Property>
+        </HtmlContainer>
+      </SideControl>
+    </SplitPanel>
+    <Dialog id="editDialog">
+      <Property name="width">600</Property>
+      <Property name="height">400</Property>
+      <Property name="caption">编辑</Property>
+      <Buttons/>
+      <Children/>
+      <Tools/>
+    </Dialog>
+    <DataSet id="dsInfo">
+      <Property name="dataProvider">carManageView#getInfo</Property>
+      <Property name="dataType">[dtInfo]</Property>
+    </DataSet>
+    <DataSet id="dsTree">
+      <Property name="dataProvider">carManageView#getTreeNodes</Property>
+    </DataSet>
+    <Dialog id="addDialog">
+      <Property name="width">800</Property>
+      <Property name="height">600</Property>
+      <Property name="caption">增加</Property>
+      <Property name="icon">url(>skin>common/icons.gif) -120px -0px</Property>
+      <Buttons/>
+      <Children/>
+      <Tools/>
+    </Dialog>
+  </View>
+</ViewConfig>

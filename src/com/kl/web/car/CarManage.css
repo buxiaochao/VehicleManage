@@ -1,0 +1,179 @@
+body {
+	background-color: #efefef;
+	color: #333333;
+	
+}
+
+.top{
+	background-image:url(/VehicleManage/images/top3.png);
+	height:53px;
+	
+}
+
+.logo{
+	background:url(/VehicleManage/images/logo.png) no-repeat 0 0px;
+	width:34px;
+	height:25px;
+	float:left;
+	margin-top:6px;
+	margin-left:6px;
+}
+
+.title{
+	background: #f8f8f8;
+	height: 36.99999999999998px;
+	border:1px solid #bbbbbb;
+	width:100%;
+}
+
+a{
+	color:#000000;
+	text-decoration:none;
+}
+
+a:hover{
+	color:red;
+	text-decoration:underline;
+}
+.lr{
+	width:114px;
+	height:37px;
+	background-color: rgb(217, 217, 217);
+	
+	
+}
+
+.lr span{
+	background:url(/VehicleManage/images/separator.png) no-repeat 0 0px;
+}
+
+.menu{
+	width:120px;
+	height:800px;
+	background-color: rgb(171, 171, 171);
+	font-size:12px;
+	float:left;
+	
+}
+
+
+.car{
+	margin-top:2px;
+	margin-left:5px;
+	width:32px;
+	height:26px;
+	background-image:url(/VehicleManage/images/car.png);
+}
+.bus{
+	margin-left:8px;
+	margin-bottom:2px;
+	width:28px;
+	height:26px;
+	background-image:url(/VehicleManage/images/bus.png);
+}
+.company{
+	margin-left:10px;
+	width:32px;
+	height:26px;
+	background-image:url(/VehicleManage/images/company.png);
+}
+.employees{
+	margin-left:13px;
+	width:28px;
+	height:26px;
+	background-image:url(/VehicleManage/images/employees.png);
+}
+.all{
+	margin-left:3px;
+	width:28px;
+	height:22px;
+	background-image:url(/VehicleManage/images/all.png);
+}
+.maintain{
+	margin-left:3px;
+	width:28px;
+	height:28px;
+	background-image:url(/VehicleManage/images/maintain.png);
+}
+.black{
+	margin-left:3px;
+	width:28px;
+	height:28px;
+	background-image:url(/VehicleManage/images/black3.png);
+}
+.cama{
+	margin-left:6px;
+	width:28px;
+	height:26px;
+	background-image:url(/VehicleManage/images/cama.png);
+}
+
+.items{
+	color: rgb(255, 255, 255);
+	float:left;
+	margin-left:8px;
+}
+
+.items div:hover{
+	color:red;
+	cursor:pointer;
+}
+
+.tree{
+	float:left;
+	width: 272.0000000000002px;
+	height: 820px;
+	left: 120px;
+	top: 61.5px;
+	font-size: 10px;
+	padding: 0px;
+	border-top-left-radius: 0px;
+	border-top-right-radius: 0px;
+	border-bottom-right-radius: 0px;
+	border-bottom-left-radius: 0px;
+	border-width: 0px;
+	border-style: solid;
+	text-align: center;
+	line-height: 15px;
+	z-index: 47;
+	font-weight: normal;
+	font-style: normal;
+	background-color: rgb(191, 191, 191);
+	color: rgb(171, 171, 171);
+	box-shadow: rgb(170, 170, 170) 0px 0px 0px;
+	opacity: 1;
+	-webkit-transform: rotate(0deg);
+}
+
+.showInformation{
+	float:right;
+	margin-right:-3px;
+	width:688px;
+	border:1px solid #bbbbbb;
+	height:800px;
+}
+
+#d_carTable tr{
+	background-color:#d1d1d1;
+}
+
+#d_carTable tr:hover{
+	background-color:#e8e8e8;
+}
+
+.search{
+	background-image:url(/VehicleManage/images/search.png);
+}
+
+.add{
+	background-image:url(/VehicleManage/images/add3.png);
+}
+
+.add:hover{
+	background-image:url(/VehicleManage/images/add_.png);
+	cursor:pointer;
+}
+
+.d_down{
+	background-image:url(/VehicleManage/images/d_down.png);
+}
